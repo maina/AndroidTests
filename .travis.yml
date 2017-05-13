@@ -26,10 +26,11 @@ cache:
 android:
     update_sdk: true
     components:
-        - platform-tools
-        - tools
-        - build-tools-25.0.0
-        - android-25
+       - tools
+       - build-tools-25.0.2
+       - platform-tools
+       - extra-android-m2repository
+       - extra-google-android-support
 
         # Additional components
         - extra-google-google_play_services
