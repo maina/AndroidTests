@@ -9,9 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import ona.io.androidtests.R;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,24 +19,9 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(clickListener);
+        fab.setOnClickListener(this);
     }
-    // Create an anonymous implementation of OnClickListener
-    private View.OnClickListener clickListener = new View.OnClickListener() {
-        public void onClick(View v) {
-            // So we will make
-            switch (v.getId() ) {
-                case R.id.fab:
-                    Snackbar.make(v, "Replace with your own action", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                 break;
 
-
-                default:
-                    break;
-
-        }
-    }};
 
 
     @Override
@@ -62,4 +45,18 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId() ) {
+            case R.id.fab:
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+                break;
+
+
+            default:
+                break;
+
+        }}
 }
